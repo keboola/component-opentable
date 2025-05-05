@@ -1,0 +1,93 @@
+{
+  "type": "object",
+  "title": "OpenTable Data Configuration",
+  "required": [
+    "endpoints",
+    "sync_options"
+  ],
+  "properties": {
+    "endpoints": {
+      "type": "object",
+      "title": "Endpoints",
+      "options": {
+        "section": "Endpoints",
+        "collapsed": false
+      },
+      "propertyOrder": 1,
+      "properties": {
+        "directory": {
+          "type": "boolean",
+          "title": "Directory",
+          "format": "checkbox",
+          "propertyOrder": 1
+        },
+        "crm_loyalty": {
+          "type": "boolean",
+          "title": "CRM Loyalty",
+          "format": "checkbox",
+          "propertyOrder": 2
+        },
+        "crm_guest_insights": {
+          "type": "boolean",
+          "title": "CRM Guest Insights",
+          "format": "checkbox",
+          "propertyOrder": 3
+        },
+        "property_details": {
+          "type": "boolean",
+          "title": "Property/Hotel Details",
+          "format": "checkbox",
+          "propertyOrder": 4
+        },
+        "guests": {
+          "type": "boolean",
+          "title": "Guests",
+          "format": "checkbox",
+          "propertyOrder": 5
+        },
+        "reservations": {
+          "type": "boolean",
+          "title": "Reservations",
+          "format": "checkbox",
+          "propertyOrder": 6
+        }
+      }
+    },
+    "sync_options": {
+      "type": "object",
+      "title": "Synchronization Options",
+      "propertyOrder": 2,
+      "required": [
+        "sync_mode",
+        "date_from",
+        "date_to"
+      ],
+      "properties": {
+        "sync_mode": {
+          "type": "string",
+          "title": "Sync Mode",
+          "enum": [
+            "full_sync",
+            "incremental_sync"
+          ],
+          "default": "full_sync",
+          "propertyOrder": 1
+        },
+        "date_from": {
+          "type": "string",
+          "title": "Date From",
+          "default": "1 month ago",
+          "description": "Start date for sync. Supports values like '5 days ago', '1 month ago', or 'last run'.",
+          "propertyOrder": 2
+        },
+        "date_to": {
+          "type": "string",
+          "title": "Date To",
+          "default": "now",
+          "description": "End date for sync. Use 'now' for current time.",
+          "propertyOrder": 3
+        }
+      }
+    }
+  }
+}

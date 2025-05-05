@@ -1,0 +1,1 @@
+https://github.com/keboola/component-opentable/blob/master/LICENSE.md
