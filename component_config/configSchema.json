@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "title": "OpenTable Extractor Configuration",
+  "required": ["authorization"],
+  "properties": {
+    "authorization": {
+      "type": "object",
+      "title": "Authorization",
+      "propertyOrder": 1,
+      "required": ["#client_id", "#client_secret"],
+      "options": {
+        "section": "Authorization",
+        "collapsed": false
+      },
+      "properties": {
+        "#client_id": {
+          "type": "string",
+          "title": "Client ID",
+          "format": "password",
+          "propertyOrder": 1
+        },
+        "#client_secret": {
+          "type": "string",
+          "title": "Client Secret",
+          "format": "password",
+          "propertyOrder": 2
+        },
+        "environment": {
+          "type": "string",
+          "title": "Environment",
+          "enum": ["prod", "dev"],
+          "default": "prod",
+          "propertyOrder": 3,
+          "description": "Use 'dev' for testing against the OpenTable QA environment."
+        }
+      }
+    },
+    "debug": {
+      "type": "boolean",
+      "title": "Enable Debug Mode",
+      "default": false,
+      "propertyOrder": 2
+    }
+  }
+}
